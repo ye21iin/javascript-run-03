@@ -20,7 +20,17 @@ async function fetchUsers() {
 }
 
 // TODO: getUsers 함수를 작성하세요.
-async function getUsers() {}
+async function getUsers() {
+  try {
+    const users = await fetchUsers();
+    // console.log(users.map((user) => user.name));
+    return users.map((user) => user.name);
+  } catch (err) {
+    return;
+  }
+}
+
+// getUsers();
 
 // export를 수정하지 마세요.
 export { getUsers };
